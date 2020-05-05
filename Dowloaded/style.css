@@ -1,0 +1,124 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* block elements --> faltól falig*/
+/* inline elements --> egymás mellé ua. a sorba*/
+
+main {
+  width: 600px;
+  /* margin-left: auto;
+  margin-right: auto;   /* Ezzel a két auto-val igazítjuk középre*/
+  margin: 0 auto;       /* a fentivel megegyező, top, bottom=0, left-right=auto */
+}
+
+.newsletter-form {
+  color: #666666;  /* Betűk színe */
+  border: 1px solid #cccccc;   /* Keret színe */ 
+  padding: 10px;
+  border-radius: 3px;
+  position: relative;   /* ez miatt a form az "x" szülője*/
+  /*height: 2000px;*/
+  /*z-index:11;*/
+}
+
+/* []-be megadhatjuk, melyik input mezőre vonatkoozon (input után nincs space!) */
+input[type="text"] {
+  width: 100%;
+  box-sizing: border-box; /* Jobbról-balról két padding közé teszi */ 
+                          /* box-sizing: content-box; Jobb oldalt kitolja*/
+  height: 30px;
+  margin: 0 0 5px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  box-sizing: border-box;
+  background: #3cb878;
+  border: 0;
+  color: white;
+  height: 30px;
+  margin: 0 0 10px;
+  cursor: pointer;
+}
+
+/*label {
+  display: inline;   /* none: nem jelenik meg a label, inline: ua a sorban jelenik meg*/
+                     /* block: új sorban jelenik meg*/
+/*}*/
+
+/* A 0 miatt könnyebb pozicionálni */
+.newsletter-form h2 {
+  margin-top: 0;
+}
+
+/* igy mozgatjuk az x-et a helyére*/
+.exit-button {
+  position: absolute;   /* relative: ekkor tudjuk elmozgatni barhová*/
+  top: 3px;            /* absolute: csak az oldalhoz viszonyítva*/
+  right: 10px;
+  cursor: pointer;
+  /* z-index: a nagyobb számú van közelebb a nézőhöz*/
+}
+
+.question-button {
+  position: absolute;   /* vagy fixed: fix helyen van a legalján pl.form height=2000px*/
+  bottom: 10px;
+  right: 10px;
+  width: 100px;
+  height: 100px;
+  color: white;
+  line-height: 100px;   /* Kisebb font esetében is a kör közepében lesz*/
+  font-size: 70px;
+  text-align: center;
+  border-radius: 50%;
+  background: #3cb878;
+  z-index: 10;
+  cursor: pointer;
+  box-shadow: 3px 3px 10px #666666;   /* árnyék */
+}
+
+.feature {
+  background: #3cb878;
+  padding: 30px;     /* mind a 3 képre igaz*/
+  margin: 10px 0;      /* mind a 3 képre igaz, a 0 miatt kimegy a szélére*/
+  width: 120px;
+  box-shadow: 3px 3px 10px #666666;   /* árnyék */
+}
+
+.key-features {
+  display: flex;     /* ez kell ahhoz, hogy egymás mellé kerüljenek a képek */ 
+  /*flex-direction: row; vagy column vagy row-reverse vagy column-reverse */
+  justify-content: space-between;  /* így lesznek egyforma helyek*/
+  flex-wrap: wrap;   /* megtöri több sorba*/
+  align-items: flex-start; /* fontos */
+  /* flex-start, flex-end, stretch, center, baseline */
+}
+
+/* Itt formázzuk a kép szövegét: fehér, középre, stb...*/
+.feature p {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+a {
+  color: #3CB878;
+}
+
+/* kép formázása */
+/*.feature img {
+  height: 400px;
+}*/
+
+/* visited link szine, lehet visited, active,  */
+/*a:visited {
+  color: red;
+}
+
+a:hover {
+  color: purple;
+}
+*/
